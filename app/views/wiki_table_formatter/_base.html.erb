@@ -1,0 +1,17 @@
+<% if Setting.text_formatting != "textile" %>
+  <% content_for :header_tags do %>
+    <script>
+      var WikiTableFormatter = {
+        config: {
+          resources: {
+            text: {
+              buttonLabel: "<%= l(:wiki_table_formatter_button_label) %>",
+            }
+          }
+        }
+      }
+    </script>
+    <%= javascript_include_tag "wiki_table_formatter", plugin: "redmine_wiki_table_formatter" %>
+    <%= stylesheet_link_tag "wiki_table_formatter", plugin: "redmine_wiki_table_formatter" %>
+  <% end %>
+<% end %>
